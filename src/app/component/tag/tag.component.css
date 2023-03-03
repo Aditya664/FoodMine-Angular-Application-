@@ -1,0 +1,25 @@
+div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div a{
+    background-color: #f0f0f0;
+    padding: .3rem 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: .2rem .15rem;
+    border-radius: 10rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    color:  #e72929;
+}
+
+div a::hover{
+    opacity: 0.9;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
