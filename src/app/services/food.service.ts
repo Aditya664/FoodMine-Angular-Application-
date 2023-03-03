@@ -18,6 +18,10 @@ export class FoodService {
     return tagInput === 'All'? this.getAll() : this.getAll().filter(f => f.tags?.toString().toLowerCase().includes(tagInput.toLowerCase()))
   }
 
+  getFoodById(id:any):Food{
+    const result = this.getAll().find(x => x.id === id)!;
+    return result;
+  }
   getAllTags():Tag[]{
     return [
       { name: 'All', count: 14 },

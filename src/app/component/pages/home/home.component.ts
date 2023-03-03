@@ -11,7 +11,7 @@ import { Food } from 'src/app/shared/models/Food';
 export class HomeComponent implements OnInit {
 
   foods: Food[] = [];
-  constructor(private foodService: FoodService, private route: ActivatedRoute) {
+  constructor(private foodService: FoodService,private router:Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -26,6 +26,5 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
 
 }
