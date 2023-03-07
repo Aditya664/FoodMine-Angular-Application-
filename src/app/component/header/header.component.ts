@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+import { Cart } from 'src/app/shared/models/Cart';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  cartCount: Cart;
 
-  ngOnInit(): void {
+  constructor(private cartService: CartService) {
+    this.cartCount = this.cartService.getcart();
   }
-
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
 }

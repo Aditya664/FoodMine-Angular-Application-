@@ -22,16 +22,25 @@ export class FoodService {
     const result = this.getAll().find(x => x.id === id)!;
     return result;
   }
+
+  getTagsCount(tagName:string){
+     const tagsCount = this.getAll().filter(x => x.tags?.includes(tagName));
+     if(tagName === 'All'){
+      return this.getAll().filter(x => x.tags).length
+     }
+     return tagsCount.length
+  }
+
   getAllTags():Tag[]{
     return [
-      { name: 'All', count: 14 },
-      { name: 'FastFood', count: 4 },
-      { name: 'Pizza', count: 2 },
-      { name: 'Lunch', count: 3 },
-      { name: 'SlowFood', count: 2 },
-      { name: 'Hamburger', count: 1 },
-      { name: 'Fry', count: 1 },
-      { name: 'Soup', count: 1 },
+      { name: 'All', count:this.getTagsCount('All') },
+      { name: 'FastFood', count:this.getTagsCount('FastFood') },
+      { name: 'Pizza', count:this.getTagsCount('Pizza')},
+      { name: 'Lunch', count:this.getTagsCount('Lunch') },
+      { name: 'SlowFood', count:this.getTagsCount('SlowFood') },
+      { name: 'Hamburger', count:this.getTagsCount('Hamburger')},
+      { name: 'Fry', count:this.getTagsCount('Fry') },
+      { name: 'Soup', count:this.getTagsCount('Soup')},
     ]
   }
 }

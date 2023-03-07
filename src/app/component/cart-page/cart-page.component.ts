@@ -13,10 +13,9 @@ export class CartPageComponent implements OnInit {
 
   cart:Cart;
   constructor(private cartService:CartService,private foodService:FoodService) { 
-    // let foods = foodService.getAll();
-    // cartService.addToCart(foods[0])
-    // cartService.addToCart(foods[1])
+    
     this.setCart()
+    this.cartService.getCartCount();
   }
 
   setCart(){
@@ -26,6 +25,7 @@ export class CartPageComponent implements OnInit {
   removeFromCart(cartItem:CartItem){
     this.cartService.removeFromcart(cartItem.food.id);
     this.setCart();
+    this.cartService.getCartCount();
   }
 
 
@@ -33,9 +33,14 @@ export class CartPageComponent implements OnInit {
     const quantity = parseInt(quantityString);
     this.cartService.changeQun(cartItem.food.id,quantity);
     this.setCart();
+    this.cartService.getCartCount();
   }
   
   ngOnInit(): void {
+      // this.getCartCount();
   }
 
+  // getCartCount(){
+  //   return this.cart.items.length
+  // }
 }
