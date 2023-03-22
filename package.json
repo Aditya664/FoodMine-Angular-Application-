@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://aditya664.github.io/FoodMine-Angular-Application-",
   "scripts": {
-     "predeploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist/foodme",
     "ng": "ng",
     "start": "ng serve",
