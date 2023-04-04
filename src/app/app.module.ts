@@ -12,6 +12,8 @@ import { TagComponent } from './component/tag/tag.component';
 import { FoodpageComponent } from './component/pages/foodpage/foodpage.component';
 import { CartPageComponent } from './component/cart-page/cart-page.component';
 import { NotFoundComponent } from './component/pages/not-found/not-found.component';
+// import {} from 'pdfmake/src/3rd-party/svg-to-pdfkit'
+// import {SampleModule} from 'angular-pdf-generator'
 
 @NgModule({
   declarations: [
@@ -22,13 +24,14 @@ import { NotFoundComponent } from './component/pages/not-found/not-found.compone
     TagComponent,
     FoodpageComponent,
     CartPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
